@@ -1,0 +1,29 @@
+clc
+disp("NAME : YASH MEHRA");
+disp("ROLL NUMBER  : 177 ");
+n = input("ENTER n : ");
+p = input("ENTER p : ");
+mean = n * p;
+
+disp("ENTER VALUES OF X ");
+for i = 1:4
+    str = "[";
+    str1 = "] : ";
+    x(i) = input(" : ");
+end
+
+disp("ENTER VALUES OF F ");
+for i = 1:4
+    y(i) = input(" : ");
+end
+
+q = 1 - p;
+comb = [1, 3, 3, 1];
+
+for i = 1:4
+    ans(i) = comb(i) * (p^x(i)) * (q^(n-x(i)));
+    ans(i) = N * ans(i); 
+end
+
+disp("ESTIMATED FREQUENCIES ARE ");
+disp(ans);

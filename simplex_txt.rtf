@@ -1,0 +1,101 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs34 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 clc\
+clear\
+p=input("enter number of varible of objective function :");\
+q=input("enter number of constrict equation :");\
+disp('enter coefficient of objective :')\
+for i=1:p\
+    A(i)=input('\\');\
+end\
+m=input("enter 1 to minimize or 2 to maximize");\
+disp('enter constrict equations :')\
+for i=1:q\
+    disp('enter ' + string(i)+ ' equation: ')\
+    for j=1:p\
+        disp('enter coefficient ' + string(j)+ ' :')\
+        B(i,j)=input('\\');\
+        if(j==p) then\
+            printf("\\n whether you want to maximize or minimize this equation:\\nEnter \\n 1. for<= \\n 2. for >= :")\
+            C(i)=input('\\');\
+            printf("enter constant");\
+            D(i)=input('\\');\
+            end\
+        end\
+    end\
+    printf("\\n\\nequation you entered are	::::\\n\\n\\n");\
+if(m==1) then\
+printf("MIN   \\n");\
+else\
+printf("MAX   \\n");\
+end\
+for i=1:p\
+    if(i==p) then\
+     printf("%dx%d",A(i),i);  \
+     else \
+    printf("%dx%d + ",A(i),i);\
+    end \
+end\
+printf("\\nConstrict equations are \\n");\
+for i=1:q\
+    for j=1:p\
+        \
+        printf("%dx%d + ",B(i,j),j);\
+        if(j==p) then\
+            if(C(i)==1) then\
+                printf(" <= %d",D(i));\
+            else if(C(i)) then\
+                    printf(" >= %d",D(i));\
+                end\
+            end\
+        end\
+end\
+printf("\\n");\
+end\
+printf("\\n\\n====================SIMPLEX TABLE IS=======================\\n\\n\\n");\
+printf("     CJ  |");\
+for i=1:p-1\
+    printf("  %d",A(i));\
+end\
+for i=1:q-1\
+    printf("  0s%d",i);\
+end\
+printf("\\n---------------------------------------------------------");\
+printf("\\nBV    Cb     Xb  |");\
+for i=1:p\
+    printf("  x%d",i);\
+end\
+for i=1:q\
+    printf("  s%d",i);\
+end\
+printf("    Min Xb/x");\
+printf("\\n---------------------------------------------------------\\n");\
+for i=1:p\
+    printf("s%d     0     %d   |   ",i,D(i));\
+    for j=1:q\
+        printf("%d    ",B(i,j));\
+    end\
+    for j=1:q\
+        if(j==i) then\
+            printf("1    ");\
+        else\
+            printf("0    ");\
+            end\
+        end\
+        printf("\\n");\
+end\
+printf("--------------------------------------------------------");\
+printf("\\n           ZJ-CJ |");\
+for i=1:p\
+    printf("  -%d",A(i));\
+end\
+for i=1:q\
+    printf("    0");\
+end}

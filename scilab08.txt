@@ -1,0 +1,25 @@
+clc;
+disp("Yogesh Joshi");
+disp("Branch : IT-C , Roll No. 178");
+mu= input("Enter mean:");
+sigma= input("Enter sigma:");
+lambda= input("Enter the value of lambda:");
+
+x= linspace(-5,8,100);
+y_normal= 1/(sigma *sqrt(2*%pi)) * exp(-0.5 *((x-mu)/ sigma).^2);
+y_exponential= lambda* exp(-lambda * x);
+clf;
+
+plot(x, y_normal, '-b');
+xlabel('x');
+ylabel('Probability Density');
+plot(x, y_exponential, '-r');
+title('To plot normal  distributionfor various parameters values');
+legend(['normal distribution','exponential dist']);
+xgrid(1,1,3);
+
+
+
+
+
+

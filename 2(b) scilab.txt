@@ -1,0 +1,6 @@
+x=linspace(-2 * %pi,2 * %pi, 1000);
+y=cos(x);
+plot(x,y);
+title('Plot of cos(x)');
+xlabel('x');
+ylabel('cos(x)');

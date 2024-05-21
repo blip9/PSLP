@@ -1,0 +1,26 @@
+clc
+disp("Name : Yogesh Joshi");
+disp("Roll no: 178, IT C");
+n=input("Enter the value of n:");
+l=input("Enter the value of l:");
+disp("values of x: ");
+for i=1:n+1
+    x(i)=input(" ");
+end
+disp("values of f");
+for i=1:n+1
+    f(i)=input(" ");
+end
+N=sum(f);
+for i=1:n+1
+    ans(i)=(exp(-l)*(l**x(i)))/factorial(x(i));
+    ans(i)=N*ans(i);
+end
+disp("Exeuted frequencies are");
+disp(ans);
+sef=sum(ans);
+disp("Sum of expected frequencies are: ");
+disp(sef);
+sof=sum(f);
+disp("Sum of observed frequencies are: ");
+disp(sof);
